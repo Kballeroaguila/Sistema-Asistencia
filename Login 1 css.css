@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+	 *{
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+		font-family: 'Poppins', sans-serif;
+	 }
+
+	 body{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		min-height: 100vh;
+		background: linear-gradient(135deg, #921e4d, #c41f61) ;
+	 }
+
+	 .container{
+		position: relative;
+		width: 256px;
+		height: 256px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	 }
+
+	 .container span{
+		position: absolute; /*genera la posicion circular*/
+		left: 0; /*Con este se mantiene centrado con la informacion de adentro*/
+		width: 32px; /*Con este sera visible*/
+		height: 6px; /*Con este sera visible*/
+		background: #671536; /*color de las figuras*/
+		border-radius: 8px; /*La figura puede mantener una forma más elegante y clasica se un cirgulo de carga*/
+		transform-origin: 128px; /*Tamaño del circulo*/
+		transform: scale(2.2) rotate(calc(var(--i) * (360deg / 50))); /*Genera la animacion del circulo de carga*/
+		animation: blink 3s linear infinite; /*hace que los colores den vuelta para poder dar el diseño de carga*/
+		animation-delay: calc(var(--i) * (3s / 50)); /*Crea la animacion para que de circulois en lugar de que solo sea una luz parpadeante*/
+	 }
+
+	 @keyframes blink{  /*Da los diseños de color, el 0% es para la luz que se coloca y el 25% es la sombra*/
+		0%{
+			background: #B58E5C;
+		}
+		25% {
+			background: #671536;
+		}
+	 }
+
+	 .login-box{
+		position: absolute;
+		width: 400px;
+	 }
+
+	 form{
+		width: 100%;
+		padding: 0 50px;
+	 }
+
+	 h2{
+		font-size: 2em;
+		color: #b58e5c;
+		text-align: center;
+	 }
+
+	 .input-box{
+		position: relative;
+		margin: 25px 0;
+	 }
+
+	 .input-box input:focus~label,
+	 .input-box input:not(:placeholder-shown) + label{
+		top: 0;
+		font-size: 0.75em;
+		background: linear-gradient(35deg, #921e4d, #c41f61) ;
+                padding: 0 6px;
+                color: #d89518;
+	 }
+
+	 input{
+		width: 100%;
+		height: 50px;
+		background: transparent;
+		border: 2px solid #b58e5c;
+		outline: none;
+		border-radius: 40px;
+		font-size: 1em;
+		color: #fff;
+		padding: 0 20px;
+		transition: .5s ease;
+	 }
+
+	 input:focus{
+		border-color: #d89518;
+	 }
+
+	 label{
+		position: absolute;
+		top: 50%; /* se mueve*/
+		left: 20px;
+		transform: translateY(-50%);
+		font-size: 1em;
+		color: #fff;
+		pointer-events: none;
+		transition: .5s ease;
+	 }
+
+	 input:focus~label{
+		top: 1px;
+		font-size: .8em;
+		background: #921e4d;
+		padding: 0 6px;
+		color: #d89518;
+	 }
+
+	 .btn{
+		width: 100%;
+		height: 45px;
+		background: #b58e5c;
+		border: none;
+		outline: none;
+		border-radius: 40px;
+		cursor: pointer;
+		font-size: 1em;
+		color: #9d184e;
+		font-weight: 600;
+	 }
+
+	 header.logo {
+      position: fixed;
+      top: 0;
+      left: 0;
+      padding: 20px;
+      background-color: #9d184e; 
+      z-index: 1000;
+    }
+
+    header.logo img {
+      height: 100px;
+      width: auto;
+    }
+
+	 
